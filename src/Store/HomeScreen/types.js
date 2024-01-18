@@ -1,0 +1,3 @@
+export const FETCH_USER_DATA = 'FETCH_USER_DATA';
+export const SET_USER_DATA = 'SET_USER_DATA';
+export const ERROR_USER_DATA = 'ERROR_USER_DATA';

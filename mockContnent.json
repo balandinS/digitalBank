@@ -1,0 +1,10 @@
+{
+    "greeting": "שלום {userName}",
+    "balance": "יתרה {balance} ₪",
+    "actionTitle": "פעולות",
+    "actionList": [{
+        "name": "העברת תשלום",
+        "screen": "RecipientStuck"
+    }
+]
+}
