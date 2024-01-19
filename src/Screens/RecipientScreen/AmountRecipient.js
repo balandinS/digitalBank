@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import {StyleSheet, Text, View} from 'react-native';
+import React from 'react';
 
 const AmountRecipient = () => {
   return (
     <View>
       <Text>AmountRecipient</Text>
     </View>
-  )
-}
+  );
+};
 
-export default AmountRecipient
+export default AmountRecipient;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

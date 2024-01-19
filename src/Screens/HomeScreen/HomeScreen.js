@@ -8,8 +8,6 @@ import SomethingWentWrong from '../../Components/SomethingWentWrong/SomethingWen
 import Colors from '../../Components/UIKIt/Colors';
 const HomeScreen = () => {
   const {user, error} = useFetchUserData();
-  console.log('🚀 ~ HomeScreen ~ user:', user);
-
   if (error) {
     return <SomethingWentWrong />;
   }
@@ -21,7 +19,7 @@ const HomeScreen = () => {
       </View>
     );
   }
-  const {balance = '', username} = user;
+  const {balance = '', username = ''} = user;
   return (
     <View style={styles.container}>
       <GreetingComponent userName={username} balance={balance} />

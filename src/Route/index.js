@@ -8,7 +8,11 @@ export default () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="RecipientStuck" component={RecipientStuck} />
+      <Stack.Screen
+        name="RecipientStuck"
+        component={RecipientStuck}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };

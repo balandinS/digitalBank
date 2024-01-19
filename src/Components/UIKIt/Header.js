@@ -3,16 +3,11 @@ import React from 'react';
 import Colors from './Colors';
 
 const Header = props => {
-  return (
-    <Text style={[styles.titleStyle, props.textAlign, props.color]}>
-      {props.title}
-    </Text>
-  );
+  return <Text style={[styles.titleStyle, props.style]}>{props.title}</Text>;
 };
 Header.defaultProps = {
   title: 'title',
-  textAlign: 'right',
-  color: Colors.black,
+  styles: {},
 };
 export default Header;
 
@@ -20,5 +15,8 @@ const styles = StyleSheet.create({
   titleStyle: {
     fontSize: 24,
     lineHeight: 34,
+    fontWeight: 'normal',
+    textAlign: 'right',
+    color: Colors.black,
   },
 });

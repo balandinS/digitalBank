@@ -3,7 +3,7 @@ import React from 'react';
 
 const SomethingWentWrong = () => {
   return (
-    <View>
+    <View style={{flex: 1}}>
       <Text>SomethingWentWrong</Text>
     </View>
   );

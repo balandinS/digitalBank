@@ -6,5 +6,8 @@
         "name": "העברת תשלום",
         "screen": "RecipientStuck"
     }
-]
+],
+"recipientPlaceHolder": "הזנת טקטס חופשי....",
+"recipientTitleList": "רשימת מטובים",
+"addNewRecipient": "הוספת מוטב חדש"
 }
