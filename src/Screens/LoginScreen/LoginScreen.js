@@ -6,28 +6,33 @@ import UITextInput from '../../Components/UIKIt/UITextInput';
 import {Formik} from 'formik';
 import * as yup from 'yup';
 import ErrorMessage from '../../Components/UIKIt/form/ErrorMessage';
-import {useSubmitNewRecipient} from '../../hooks/formik';
-const schemeCreateRecipient = yup.object({
-  name: yup
+import {useLogin} from '../../hooks/login';
+
+const schemeLogin = yup.object({
+  userName: yup
     .string()
     .required(mockContent.validateNewRecipientName)
     .min(3, mockContent.minLengthNewRecipientName),
-  acount: yup
+  password: yup
     .string()
-    .required(mockContent.validateNewRecipientAccount)
-    .matches(/^\d+$/, mockContent.onlyNumbersNewRecipientAccount)
-    .min(6, mockContent.minLengthNewRecipientAccount),
+    .min(6, '6 minimum characters')
+    .max(8, '8 maximum characters')
+    .matches(
+      /^(?=.*[A-Za-z])(?=.*\d)(?!.*\W).{6,8}$/,
+      'requird number and characters',
+    )
+    .required('Required field'),
 });
-const CreateRecipient = () => {
-  const onSubmit = useSubmitNewRecipient();
+const LoginScreen = () => {
+  const onSubmit = useLogin();
   return (
     <View style={styles.container}>
-      <Header style={styles.title} title={mockContent.addNewRecipient} />
+      <Header style={styles.title} title={mockContent.loginTitle} />
       <View>
         <Formik
           style={styles.formikContainer}
-          validationSchema={schemeCreateRecipient}
-          initialValues={{name: '', acount: ''}}
+          validationSchema={schemeLogin}
+          initialValues={{userName: '', password: ''}}
           onSubmit={onSubmit}>
           {({
             handleChange,
@@ -39,36 +44,37 @@ const CreateRecipient = () => {
             errors,
             touched,
           }) => {
-            const nameValid = touched.name && errors.name;
-            const accountValid = touched.acount && errors.acount;
+            const userNAmeValid = touched.userName && errors.userName;
+            const passwordValid = touched.userName && errors.password;
             return (
               <View style={styles.formik}>
                 <View style={styles.flex1}>
                   <View>
                     <UITextInput
-                      onChangeText={handleChange('name')}
-                      onBlur={handleBlur('name')}
-                      value={values.name}
-                      onEndEditing={() => setFieldTouched('name')}
-                      placeHolder={mockContent.addNewRecipientName}
+                      onChangeText={handleChange('userName')}
+                      onBlur={handleBlur('userName')}
+                      value={values.userName}
+                      onEndEditing={() => setFieldTouched('userName')}
+                      placeHolder={mockContent.loginUserNamePlaceholder}
                     />
-                    {nameValid && (
+                    {userNAmeValid && (
                       <View style={styles.errorContainer}>
-                        <ErrorMessage error={errors.name} />
+                        <ErrorMessage error={errors.userName} />
                       </View>
                     )}
                   </View>
                   <View style={styles.accountContainer}>
                     <UITextInput
-                      onChangeText={handleChange('acount')}
-                      onBlur={handleBlur('acount')}
-                      onEndEditing={() => setFieldTouched('acount')}
-                      value={values.acount}
-                      placeHolder={mockContent.addNewRecipientAccount}
+                      isPassword
+                      onChangeText={handleChange('password')}
+                      onBlur={handleBlur('password')}
+                      onEndEditing={() => setFieldTouched('password')}
+                      value={values.password}
+                      placeHolder={mockContent.loginUserPasswordPlaceholder}
                     />
-                    {accountValid && (
+                    {passwordValid && (
                       <View style={styles.errorContainer}>
-                        <ErrorMessage error={errors.acount} />
+                        <ErrorMessage error={errors.password} />
                       </View>
                     )}
                   </View>
@@ -77,7 +83,7 @@ const CreateRecipient = () => {
                 <View style={styles.buttonContainer}>
                   <Button
                     disabled={!isValid}
-                    title={mockContent.addNewRecipientBtn}
+                    title={mockContent.loginUserBtn}
                     onPress={handleSubmit}
                   />
                 </View>
@@ -90,7 +96,7 @@ const CreateRecipient = () => {
   );
 };
 
-export default CreateRecipient;
+export default LoginScreen;
 
 const styles = StyleSheet.create({
   container: {

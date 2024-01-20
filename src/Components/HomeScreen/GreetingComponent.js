@@ -4,7 +4,6 @@ import Header from '../UIKIt/Header';
 import UIText from '../UIKIt/UItext';
 import * as mockContnent from '../../../mockContnent.json';
 const GreetingComponent = ({userName = '', balance = ''}) => {
-  console.log('🚀 ~ GreetingComponent ~ userName:', userName);
   if (!userName) {
     return null;
   }

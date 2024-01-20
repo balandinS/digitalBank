@@ -54,7 +54,6 @@ const Item = ({name, account}) => {
 const ItemSeparatorComponent = () => <View style={styles.separator} />;
 const RecipientFlashList = props => {
   const [filterList, isLoading] = useFilteredList(props.value);
-  console.log('🚀 ~ RecipientFlashList ~ filterList:', filterList);
   const keyExtractor = React.useCallback(
     (item, index) => `${item.acount} - ${index}`,
     [],
