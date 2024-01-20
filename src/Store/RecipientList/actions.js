@@ -13,7 +13,8 @@ export const fetchRecipientList = () => async dispatch => {
     const data = await response.json();
 
     if (response.ok) {
-      dispatch(setRecipientList(data));
+      const {contacts} = data;
+      dispatch(setRecipientList(contacts));
     } else {
       dispatch(setErrorRecipientList());
     }
@@ -21,3 +22,7 @@ export const fetchRecipientList = () => async dispatch => {
     dispatch(setErrorRecipientList());
   }
 };
+export const addRecipientList = payload => ({
+  type: TYPES.ADD_RECIPIENT_LIST,
+  payload,
+});

@@ -11,7 +11,11 @@ export default (state = initialState, {type, payload}) => {
       return {...state, recipientList: payload};
     case TYPES.SET_RECIPIENT_LIST:
       return {...state, recipientList: null, error: true};
-
+    case TYPES.ADD_RECIPIENT_LIST:
+      return {
+        ...state,
+        recipientList: [...state.recipientList, payload],
+      };
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text} from 'react-native';
 import React from 'react';
 import Colors from './Colors';
 
@@ -14,7 +14,7 @@ UIText.defaultProps = {
   title: 'title',
   textAlign: 'right',
   color: Colors.black,
-}
+};
 export default UIText;
 
 const styles = StyleSheet.create({

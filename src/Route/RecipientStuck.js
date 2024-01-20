@@ -1,10 +1,12 @@
 import React from 'react';
+import {Text} from 'react-native';
 import {useSelector} from 'react-redux';
 import {createStackNavigator} from '@react-navigation/stack';
 import RecipientList from '../Screens/RecipientScreen/RecipientList';
 import CreateRecipient from '../Screens/RecipientScreen/CreateRecipient';
 import AmountRecipient from '../Screens/RecipientScreen/AmountRecipient';
 import {userAccountNumberSelector} from '../Store/HomeScreen/selectors';
+import ErrorRecipient from '../Screens/RecipientScreen/ErrorRecipient';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +32,14 @@ const RecipientStuck = () => {
       component: AmountRecipient,
       options: {
         title: accountNumber,
+      },
+    },
+    {
+      name: 'ErrorRecipient',
+      component: ErrorRecipient,
+      options: {
+        title: accountNumber,
+        headerLeft: props => null,
       },
     },
   ];

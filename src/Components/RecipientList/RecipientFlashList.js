@@ -34,7 +34,7 @@ const ListFooterComponent = () => {
 };
 const EmptyComponent = () => {
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.flex1}>
       <SomethingWentWrong />
     </View>
   );
@@ -78,6 +78,7 @@ const RecipientFlashList = props => {
         style={styles.container}
         data={filterList}
         keyExtractor={keyExtractor}
+        extraData={filterList}
         EmptyComponent={EmptyComponent}
         renderItem={renderItem}
         estimatedItemSize={100}
@@ -95,6 +96,9 @@ RecipientFlashList.defaultProps = {
 export default RecipientFlashList;
 
 const styles = StyleSheet.create({
+  flex1: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     marginTop: 32,

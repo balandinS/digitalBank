@@ -23,19 +23,13 @@ const UITextInput = props => {
                 }),
               },
               {
-                translateX: placeHolderAnime.interpolate({
-                  inputRange: [0, 1],
-                  outputRange: [0, -6],
-                }),
-              },
-              {
                 scale: placeHolderAnime.interpolate({
                   inputRange: [0, 1],
                   outputRange: [1, 0.8],
                 }),
               },
             ],
-            zIndex: 1,
+            zIndex: 99,
           },
         ]}>
         <Text>{props.placeHolder}</Text>
@@ -74,6 +68,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     borderBottomColor: Colors.electric_violet,
     borderBottomWidth: 1,
+    minWidth: 250,
   },
   input: {
     color: Colors.black,
@@ -86,7 +81,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     right: 0,
     lineHeight: 20,
-    color: 'rgb(145, 145, 145)',
-    textAlign: 'right',
+    color: Colors.black,
+    height: 20,
+    zIndex: 99,
   },
 });

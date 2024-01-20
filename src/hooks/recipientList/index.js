@@ -17,22 +17,22 @@ export const useFetchRecipientList = () => {
 
   React.useEffect(() => {
     dispatch(fetchRecipientList());
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 };
 
 export const useFilteredList = value => {
   const originalList = useSelector(RecipientListSelector);
   const isLoading = !originalList; // before fetching list equal null
   const filterList = React.useMemo(() => {
-    if (originalList) {
-      const {contacts = []} = originalList;
+    if (originalList?.length) {
       if (!value) {
-        return contacts;
+        return originalList;
       }
       if (regexNumber.test(value)) {
-        return contacts.filter(({acount}) => acount.includes(value));
+        return originalList.filter(({acount}) => acount.includes(value));
       }
-      return contacts.filter(({name}) => name.startsWith(value));
+      return originalList.filter(({name}) => name.startsWith(value));
     }
     return [];
     // eslint-disable-next-line react-hooks/exhaustive-deps

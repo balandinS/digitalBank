@@ -1,4 +1,8 @@
 {
+    "loginTitle": "שׁלום משתמש",
+    "loginUserNamePlaceholder": "שם משתמש",
+    "loginUserPasswordPlaceholder": "סיסמה",
+    "loginUserBtn": "התחבר",
     "greeting": "שלום {userName}",
     "balance": "יתרה {balance} ₪",
     "actionTitle": "פעולות",
@@ -9,5 +13,25 @@
 ],
 "recipientPlaceHolder": "הזנת טקטס חופשי....",
 "recipientTitleList": "רשימת מטובים",
-"addNewRecipient": "הוספת מוטב חדש"
+"addNewRecipient": "הוספת מוטב חדש",
+"addNewRecipientTitle": "יצירת מוטב חדש",
+"addNewRecipientName": "שם המשתמש",
+"addNewRecipientAccount": "מספר חשבון",
+"validateNewRecipientAccount": "חובה מספר חשבון",
+"onlyNumbersNewRecipientAccount": "רק מספרים",
+"validateNewRecipientName": "שם המשתמש חובה",
+"minLengthNewRecipientName": "מינומום 3 תווים",
+"minLengthNewRecipientAccount": "מינומום 6 תווים",
+"existNewRecipientAccount": "חשבון קיים",
+"addNewRecipientBtn": "אישור",
+"transactionsProcessTitle": "בחר סכום לעברת כסף",
+"transactionsProcessPlaceholder": "סכום",
+"transactionsProcessValidate": "בחר סכום לא אפס ועד ₪amount",
+"transactionsProcessRequire": "שדה חןבה",
+"transactionsProcessOnlyNumber": "רק מספרים",
+"transactionsProcessBtn": "אישור עברה",
+"transactionsProcessError": "משהו השתבש נסו יותר מאוחר",
+"transactionsProcessErrorLabel": "פעולת עברת כספים כשלה...",
+"transactionsProcessErrorBtn": "חזרה לדף הבית"
+
 }
